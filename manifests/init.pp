@@ -4,9 +4,9 @@
 #
 #   include sourcetree
 class sourcetree (
-  $version = '1.6.3.1',
+  $version = '1.8.0.2',
 ) {
-  package { 'SourceTree':
+  package { "SourceTree-${version}":
     provider => 'appdmg',
     source   => "http://downloads.atlassian.com/software/sourcetree/SourceTree_${version}.dmg"
   }
