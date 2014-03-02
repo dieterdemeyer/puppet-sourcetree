@@ -1,10 +1,11 @@
 require 'spec_helper'
 
 describe 'sourcetree' do
-  it do
-    should contain_package("SourceTree-1.8.0.2").with({
-      :provider => 'appdmg',
-      :source   => 'http://downloads.atlassian.com/software/sourcetree/SourceTree_1.8.0.2.dmg',
-    })
-  end
+
+  version = '1.8.3'
+
+  it { should contain_class('sourcetree') }
+  it { should contain_package("SourceTree-#{version}").with_provider('appdmg') }
+  it { should contain_package("SourceTree-#{version}").with_source("http://downloads.atlassian.com/software/sourcetree/SourceTree_#{version}.dmg") }
+
 end
